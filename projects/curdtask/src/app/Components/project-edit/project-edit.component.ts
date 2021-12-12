@@ -25,7 +25,6 @@ export class ProjectEditComponent implements OnInit {
        (res)=>{
         this.project=res;
         console.log(this.project);
-        
        }
      )
     }

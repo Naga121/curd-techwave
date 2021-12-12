@@ -8,12 +8,17 @@ import { ProjectEditComponent } from './Components/project-edit/project-edit.com
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
-  {path: 'login', component: LoginComponent},
-  {path: 'navbar', component: NavbarComponent},
-  { path:'home', component: HomeComponent },
+  { path: 'login', component: LoginComponent },
+  {
+    path: 'navbar', component: NavbarComponent,
+    children: [
+      { path: '', redirectTo: 'home', pathMatch: 'full' },
+      { path: 'home', component: HomeComponent },
+    ]
+  },
   { path: 'list/:id', component: ListComponent },
-  { path: 'add/:id', component: ProjectEditComponent },
-  { path: 'edit/:id', component: ProjectEditComponent }
+      { path: 'add/:id', component: ProjectEditComponent },
+      { path: 'edit/:id', component: ProjectEditComponent },
 
 ];
 
